@@ -22,6 +22,7 @@
  */
 function findElement(/* arr, value */) {
   throw new Error('Not implemented');
+  // return (arr.indexOf(value));
 }
 
 /**
@@ -37,6 +38,7 @@ function findElement(/* arr, value */) {
  */
 function generateOdds(/* len */) {
   throw new Error('Not implemented');
+  // return (Array.from(len).map((_, i) => 1 + i * 2));
 }
 
 
@@ -54,6 +56,7 @@ function generateOdds(/* len */) {
  */
 function doubleArray(/* arr */) {
   throw new Error('Not implemented');
+  // return (arr.concat(arr));
 }
 
 
@@ -70,6 +73,11 @@ function doubleArray(/* arr */) {
  */
 function getArrayOfPositives(/* arr */) {
   throw new Error('Not implemented');
+  /* const arr1 = [];
+  for (let i = 0; i < arr.length; i + 1) {
+    if (arr[i] > 0) arr1.push(arr[i]);
+  }
+  return (arr1); */
 }
 
 /**
