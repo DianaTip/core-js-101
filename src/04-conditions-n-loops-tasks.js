@@ -29,6 +29,16 @@
  */
 function getFizzBuzz(/* num */) {
   throw new Error('Not implemented');
+  /* switch (num) {
+    case (num % 3 === 0 && num % 5 === 0):
+      return ('FizzBuzz');
+    case (num % 3 === 0):
+      return ('Fizz');
+    case (num % 5 === 0):
+      return ('Bizz');
+    default:
+      return (num);
+  } */
 }
 
 
