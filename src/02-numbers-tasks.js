@@ -207,11 +207,11 @@ function isPrime(n) {
   // throw new Error('Not implemented');
   if ((n === 2) || (n === 3) || (n === 5)) { return true; }
   if ((n <= 1) || (n % 2 === 0) || (n % 3 === 0) || (n % 5 === 0)) { return false; }
-  /*else
+  /* else
   {for (let i=5; i<n; i=i+6)
   {
 
-  }}*/
+  }} */
   return true;
 }
 
