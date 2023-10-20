@@ -52,7 +52,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return ((value1 + value2) / 2);
+  if (value1 + value2 === Infinity) { return (value1); } return ((value1 + value2) / 2);
 }
 
 /**
@@ -207,6 +207,11 @@ function isPrime(n) {
   // throw new Error('Not implemented');
   if ((n === 2) || (n === 3) || (n === 5)) { return true; }
   if ((n <= 1) || (n % 2 === 0) || (n % 3 === 0) || (n % 5 === 0)) { return false; }
+  /*else
+  {for (let i=5; i<n; i=i+6)
+  {
+
+  }}*/
   return true;
 }
 

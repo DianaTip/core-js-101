@@ -27,18 +27,12 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(/* num */) {
-  throw new Error('Not implemented');
-  /* switch (num) {
-    case (num % 3 === 0 && num % 5 === 0):
-      return ('FizzBuzz');
-    case (num % 3 === 0):
-      return ('Fizz');
-    case (num % 5 === 0):
-      return ('Bizz');
-    default:
-      return (num);
-  } */
+function getFizzBuzz(num) {
+  // throw new Error('Not implemented');
+  if (num % 3 === 0 && num % 5 === 0) return ('FizzBuzz');
+  if (num % 3 === 0) return ('Fizz');
+  if (num % 5 === 0) return ('Buzz');
+  return (num);
 }
 
 
@@ -170,6 +164,8 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
  */
 function isInsideCircle(/* circle, point */) {
   throw new Error('Not implemented');
+  /* if ((point.x - circle.x) ** 2 + (point.y - circle.y) ** 2 >= circle.radius ** 2) return (true);
+  return (false); */
 }
 
 

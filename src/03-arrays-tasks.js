@@ -20,12 +20,13 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
-/*  for (let i = 0; i < arr.length; i=i + 1) {
-    if (arr[i] === value) { return Number(arr.indexOf(value)); }
-    return Number(-1);
-  } */
+function findElement(arr, value) {
+  let num = -1;
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i] === value) num = arr.indexOf(value);
+  }
+  if (num === -1) return (-1);
+  return (num);
 }
 
 /**

@@ -204,7 +204,7 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(/* width, height */) {
-
+  throw new Error('Not implemented');
 }
 
 
@@ -224,9 +224,19 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-
+function encodeToRot13(str) {
+  const start = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz?! '.split('');
+  const end = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm?! '.split('');
+  let ind;
+  const res = [];
+  const str1 = str.split('');
+  for (let i = 0; i < str1.length; i += 1) {
+    ind = start.indexOf(str1[i]);
+    res.push(end[ind]);
+  }
+  return (res.join(''));
 }
+
 
 /**
  * Returns true if the value is string; otherwise false.
@@ -242,8 +252,7 @@ function encodeToRot13(/* str */) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof (value) === 'string') { return (true); }
-  return (false);
+  if (typeof (value) === 'string' || value instanceof String) { return (true); } return (false);
 }
 
 
@@ -272,7 +281,9 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-  return value.indexOf();
+  const str = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣', 'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦', 'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
+    'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
+  return str.indexOf(value);
 }
 
 
