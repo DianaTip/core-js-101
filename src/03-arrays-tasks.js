@@ -21,12 +21,8 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-  let num = -1;
-  for (let i = 0; i < arr.length; i += 1) {
-    if (arr[i] === value) num = arr.indexOf(value);
-  }
-  if (num === -1) return (-1);
-  return (num);
+  const arr1 = arr.indexOf(value);
+  return arr1;
 }
 
 /**
@@ -40,9 +36,15 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
-  // return (Array.from(len).map((_, i) => 1 + i * 2));
+function generateOdds(len) {
+  // throw new Error('Not implemented');
+  const arr = [];
+  let count = 1;
+  for (let i = 1; i <= len; i += 1) {
+    arr.push(count);
+    count += 2;
+  }
+  return (arr);
 }
 
 
@@ -119,11 +121,12 @@ function getArrayOfStrings(arr) {
  */
 function removeFalsyValues(arr) {
 //  throw new Error('Not implemented');
-  const arr1 = [];
+  const arr1 = [false, null, 0, '', undefined, NaN];
+  const res = [];
   for (let i = 0; i < arr.length; i += 1) {
-    if (arr[i] !== false && arr[i] !== null && arr[i] !== 0 && arr[i] !== undefined && arr[i] !== '' && arr[i].isNan(NaN)) { arr1.push(arr[i]); }
+    if (!arr1.includes(arr[i])) { res.push(arr[i]); }
   }
-  return (arr1);
+  return res;
 }
 
 /**
@@ -234,8 +237,10 @@ function getTail(arr, n) {
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
-function toCsvText(/* arr */) {
-  throw new Error('Not implemented');
+function toCsvText(arr) {
+  // throw new Error('Not implemented');
+  const result = arr.join('\n');
+  return (JSON.stringify(result));
 }
 
 /**
@@ -274,9 +279,11 @@ function toArrayOfSquares(arr) {
 function getMovingSum(arr) {
   // throw new Error('Not implemented');
   const arr1 = [];
+  let sum;
   arr1.push(arr[0]);
-  for (let i = 0; i < arr.length; i += 1) {
-    arr1.push(arr1[i] + arr[i + 1]);
+  for (let i = 0; i < arr.length - 1; i += 1) {
+    sum = arr1[i];
+    arr1.push(sum + arr[i + 1]);
   }
   return (arr1);
 }

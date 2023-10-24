@@ -110,9 +110,17 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(x1, y1, x2, y2) {
-  // throw new Error('Not implemented');
-  return ((x1 * y1) + (x2 * y2)) / (Math.sqrt(x1 ** 2 + x2 ** 2) * Math.sqrt(y1 ** 2 + y2 ** 2));
+function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
+  throw new Error('Not implemented');
+  /* const vec1 = Math.sqrt(x1 ** 2 + y1 ** 2);
+  const vec2 = Math.sqrt(x2 ** 2 + y2 ** 2);
+  const skal = (x1 * x2) + (y1 * y2);
+  var cos = skal / (vec1 * vec2);
+  if (cos < -1) cos = -1; if (cos > 1) cos = 1;
+  /*  let phi = Math.atan2(y2, x2) - Math.atan2(y1, x1);
+  if (alpha < 0) alpha += Math.PI * 2;
+  if (alpha > Math.Pi) alpha -= Math.PI; */
+  // return (cos);
 }
 
 /**
@@ -182,8 +190,10 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  // throw new Error('Not implemented');
+  const del = 10 ** pow;
+  return (Math.round(num / del) * del);
 }
 
 /**
@@ -205,13 +215,13 @@ function roundToPowerOfTen(/* num, pow */) {
  */
 function isPrime(n) {
   // throw new Error('Not implemented');
-  if ((n === 2) || (n === 3) || (n === 5)) { return true; }
-  if ((n <= 1) || (n % 2 === 0) || (n % 3 === 0) || (n % 5 === 0)) { return false; }
-  /* else
-  {for (let i=5; i<n; i=i+6)
-  {
-
-  }} */
+  if (n === 2) { return true; }
+  if (n === 1) { return false; }
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
   return true;
 }
 
